@@ -1,0 +1,19 @@
+{
+  "name": "braze/brazephpsdk",
+  "type": "library",
+  "authors": [
+    {
+      "name": "robparker",
+      "email": "rparker@plinthify.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Braze\\": "src/"
+    }
+  }
+}
