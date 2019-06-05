@@ -19,4 +19,8 @@ class BrazeAccountBase {
     $this->base_url = $base_url;
   }
 
+  public function getBaseUrl() {
+    return $this->base_url;
+  }
+
 }

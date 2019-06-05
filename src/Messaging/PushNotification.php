@@ -168,6 +168,10 @@ class PushNotification extends BrazeAccountBase {
     return $this->payload;
   }
 
+  public function getApiPath() {
+    return $this->api_path;
+  }
+
   /**
    * Helper method to get the url path of the trigger type.
    *
