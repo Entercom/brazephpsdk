@@ -7,7 +7,7 @@ class BrazeAccountBase {
   /**
    * @var string Current version of the SDK
    */
-  const VERSION = '1.0.0';
+  const VERSION = '0.0.1';
 
   /**
    * @var string

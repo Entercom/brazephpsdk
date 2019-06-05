@@ -62,8 +62,8 @@ class DevicePushObject implements DeviceObjectInterface {
       "android" => 'Android',
       "kindle" => 'KindleFire',
       "web" => 'Web',
-      "windows8" => 'WindowsPhone8',
-      "windows" => 'WindowsUniversal',
+      "windows_phone8" => 'WindowsPhone8',
+      "windows_universal" => 'WindowsUniversal',
     );
   }
 

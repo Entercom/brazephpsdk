@@ -15,15 +15,20 @@ class MessagePayload {
     $this->api_key = $api_key;
   }
 
+  public function getPushType($type) {
+    return $type . '_push';
+  }
+
   public function addPushObject($type, DevicePushObject $message) {
     // Device types
     $device_types = array_keys(DevicePushObject::deviceOptions());
+    $push_type = $this->getPushType($type);
     if (!empty($type) && in_array($type, $device_types)) {
       if (!$message instanceof DevicePushObject) {
         $message = new DevicePushObject($type);
       }
-      
-      $this->messages->$type = $message;
+
+      $this->messages->$push_type = $message;
     }
     else {
       // set warning for disallowed $type
@@ -32,15 +37,17 @@ class MessagePayload {
   }
   
   public function getPushObject($type) {
-    if (!isset($this->messages->$type)) {
-      $this->messages->$type = new DevicePushObject($type);
+    $push_type = $this->getPushType($type);
+    if (!isset($this->messages->$push_type)) {
+      $this->messages->$push_type = new DevicePushObject($type);
     }
-    return $this->messages->$type;
+    return $this->messages->$push_type;
   }
 
   public function removePushObject($type) {
-    if (isset($this->messages->$type)) {
-      unset($this->messages->$type);
+    $push_type = $this->getPushType($type);
+    if (isset($this->messages->$push_type)) {
+      unset($this->messages->$push_type);
     }
   }
 
