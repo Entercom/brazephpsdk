@@ -26,9 +26,9 @@ $device_class = "Braze\\Messaging\\Devices\\$classname";
 // create a device-specific push object
 $push_notification->getPayload()->addPushObject($type, new $device_class($type));
 // set push title.  Has a specific setter for title defined by interface
-$push_notification->getPayload()->getPushObject($type)->setTitle($message_wrapper->name->value());
+$push_notification->getPayload()->getPushObject($type)->setTitle('I am the title!');
 // set push body.  Has a specific setter for body as defined by interface
-$push_notification->getPayload()->getPushObject($type)->setBody($message_wrapper->field_message_body->value());
+$push_notification->getPayload()->getPushObject($type)->setBody('here is my body message');
 // set badge. uses set method for adding other device-specific properties
 $push_notification->getPayload()->getPushObject($type)->set('badge', 1);
 
