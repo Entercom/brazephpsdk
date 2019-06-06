@@ -11,7 +11,7 @@ $api_key = 'some-api-key-123456789'
 // Create new push object
 $push_notification = new \Braze\Messaging\PushNotification($base_url, $api_key);
 // add a Segment ID
-$push_notification->getPayload()->set('segment_id', $config['segment_id']);
+$push_notification->getPayload()->set('segment_id', 'some-segment-id-12345');
 // set Broadcast to TRUE
 $push_notification->getPayload()->set('broadcast', TRUE);
 
