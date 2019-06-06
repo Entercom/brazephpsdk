@@ -14,8 +14,7 @@ $push_notification = new \Braze\Messaging\PushNotification($base_url, $api_key);
 $push_notification->getPayload()->set('segment_id', $config['segment_id']);
 // set Broadcast to TRUE
 $push_notification->getPayload()->set('broadcast', TRUE);
-```
-```php
+
 // apple, android, windows_phone8, kindle_fire, windows_universal
 $device_type = 'apple';
 $type = $push_notification->getPayload()->getPushObject($device_type)->getType();
@@ -33,8 +32,6 @@ $push_notification->getPayload()->getPushObject($type)->setBody($message_wrapper
 // set badge. uses set method for adding other device-specific properties
 $push_notification->getPayload()->getPushObject($type)->set('badge', 1);
 
-```
-```php
 // send the message
 $push_notification->send();
 
