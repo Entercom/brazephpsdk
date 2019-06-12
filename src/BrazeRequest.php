@@ -83,7 +83,7 @@ class BrazeRequest {
         'Content-Length: ' . strlen($data),
       ];
       curl_setopt($ch, CURLOPT_POST, 1);
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+      curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
       curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     }
 
