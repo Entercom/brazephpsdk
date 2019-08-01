@@ -5,32 +5,21 @@ namespace Braze\Export;
 class Sends extends ExportBase
 {
 
-  public function __construct($base_url, $api_key) {
+  public function __construct($base_url, $api_key, $campaign_id = NULL, $send_id = NULL) {
     parent::__construct($base_url, $api_key);
     $this->setType('sends');
     $this->setEndpoint('data_series');
-    $this->params['api_key'] = $api_key;
-  }
-
-  /**
-   * @param string $segment_id - segment_id
-   *
-   * @return $this
-   */
-  public function get($campaign_id = NULL, $send_id = NULL) {
     if (!empty($campaign_id)) {
-      $this->addParam('campaign_id', $campaign_id);
+      $this->params['campaign_id'] = $campaign_id;
     }
     if (!empty($send_id)) {
-      $this->addParam('send_id', $send_id);
+      $this->params['send_id'] = $send_id;
     }
-    
     // make sure required field is set.
     if (empty($this->getParam('length'))) {
       $this->addParam('length', 7);
     }
-    
-    return $this;
+    $this->params['api_key'] = $api_key;
   }
 
   /**
